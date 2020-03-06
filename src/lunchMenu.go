@@ -15,9 +15,9 @@ type Restaurant interface {
 func main() {
 	fmt.Println("Hello", Util.Today, "!")
 
-	var restaurants [1]Restaurant
-	restaurants[0] = &Zenit.Zenit{}
-
+	restaurants := []Restaurant{
+		&Zenit.Zenit{},
+	}
 	for _, r := range restaurants {
 		r.PrintMenu()
 	}
