@@ -8,8 +8,9 @@ Note:
 
 
 Steps to Build/Run:
-1. Build the program (Run build.bat for Windows. If not, refer to steps within the same)
-2. Run the program (Run run.bat for Windows. If not, refer to steps within the same)
+1. Import goquery package (go get "github.com/PuerkitoBio/goquery").
+1. Build the program (Run build.bat for Windows. If not, refer to steps within the same).
+2. Run the program (Run run.bat for Windows. If not, refer to steps within the same).
 
 
 Sample Output:
