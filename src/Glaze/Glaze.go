@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	WEB_SCRAPE = true
+	WEB_SCRAPE = false
 	URL        = "https://vasakronan.foodbycoor.se/glaze/sv/meny"
 	NAME       = "Glaze"
 )

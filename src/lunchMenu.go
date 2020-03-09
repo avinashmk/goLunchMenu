@@ -32,4 +32,9 @@ func main() {
 			fmt.Println("Web-scraping disabled.")
 		}
 	}
+
+	// To prevent closing Console...
+	var a string
+	fmt.Printf("\n\nPress ENTER to exit...")
+	fmt.Scanf("%s", a)
 }

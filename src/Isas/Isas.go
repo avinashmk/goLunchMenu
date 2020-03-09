@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	WEB_SCRAPE = true
+	WEB_SCRAPE = false
 	URL        = "https://isasspis.gastrogate.com/lunch/"
 	NAME       = "Isas Spis"
 )
