@@ -1,6 +1,7 @@
 package Util
 
 import (
+	"fmt"
 	"github.com/PuerkitoBio/goquery"
 	"log"
 	"net/http"
@@ -44,7 +45,7 @@ func GetHtmlBody(url string) (doc *goquery.Document) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	request.Header.Set("User-Agent", "Kinda Lunch Menu Consolidator App")
+	request.Header.Add("UserAgent", "Kinda_Lunch_Menu_Consolidator_App")
 
 	// Send request
 	response, err := client.Do(request)
@@ -60,4 +61,9 @@ func GetHtmlBody(url string) (doc *goquery.Document) {
 	}
 
 	return
+}
+
+func PrintHeader(header string) {
+	fmt.Println("\n================================================================")
+	fmt.Printf("%s: ", header)
 }

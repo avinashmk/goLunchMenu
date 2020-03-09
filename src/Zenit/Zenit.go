@@ -7,19 +7,19 @@ import (
 )
 
 const (
-	WEB_SCRAPE = false
+	WEB_SCRAPE = true
 	URL        = "https://vasakronan.foodbycoor.se/zenit/sv/meny"
+	NAME       = "Zenit"
 )
 
 type Zenit struct{}
 
-func (z *Zenit) PrintMenu() (result bool) {
+func (z *Zenit) PrintMenu() {
 	doc := Util.GetHtmlBody(URL)
-
 	doc.Find("body .menu-row").EachWithBreak(func(_ int, sBody *goquery.Selection) bool {
 		bodyText := Util.GetText(sBody)
 		if Util.CheckToday(bodyText) {
-			fmt.Println("Day:", bodyText)
+			fmt.Printf("%s\n\n", bodyText)
 			sBody.NextUntil("h2").Find(".element.title").Each(func(_ int, sFiltered *goquery.Selection) {
 				fmt.Println(Util.GetText(sFiltered))
 			})
@@ -27,6 +27,12 @@ func (z *Zenit) PrintMenu() (result bool) {
 		}
 		return true
 	})
-	result = true
-	return
+}
+
+func (z *Zenit) Name() string {
+	return NAME
+}
+
+func (z *Zenit) WebScrape() bool {
+	return WEB_SCRAPE
 }

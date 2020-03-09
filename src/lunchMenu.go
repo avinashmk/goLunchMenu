@@ -1,27 +1,35 @@
 package main
 
 import (
+	"Entre"
+	"Glaze"
+	"Isas"
 	"Util"
 	"Zenit"
 	"fmt"
-	//"os"
-	//"strings"
 )
 
 type Restaurant interface {
-	PrintMenu() bool
+	PrintMenu()
+	Name() string
+	WebScrape() bool
 }
 
 func main() {
-	fmt.Println("Hello", Util.Today, "!")
+	fmt.Println("Hello", Util.Today, "Lunch!")
 
 	restaurants := []Restaurant{
 		&Zenit.Zenit{},
+		&Glaze.Glaze{},
+		&Entre.Entre{},
+		&Isas.Isas{},
 	}
 	for _, r := range restaurants {
-		r.PrintMenu()
+		Util.PrintHeader(r.Name())
+		if r.WebScrape() {
+			r.PrintMenu()
+		} else {
+			fmt.Println("Web-scraping disabled.")
+		}
 	}
-	// Open a file
-	//file, _ := os.Open("../smaple.html")
-
 }
