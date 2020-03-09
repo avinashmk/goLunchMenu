@@ -1,19 +1,25 @@
-# goLunchMenuKista
+# goLunchMenu
 
-Note:
+A console application in Go. Consolidates the Lunch Menu from Restaurants that are provided as packages. The restaurants can be modified by adding a new struct implementing 'type Restaurant interface'.
+
+## Note
+
 1. Web scraping is disabled by default in the source here.
    It has to be explicitly enabled by setting flag WEB_SCRAPE = true.
 2. Web scraping could be illegal if improperly used.
    However, if other parts of code are not tweaked/otherwise altered, this program should be pretty safe.
 
-
-Steps to Build/Run:
-1. Import goquery package (go get "github.com/PuerkitoBio/goquery").
-1. Build the program (Run build.bat for Windows. If not, refer to steps within the same).
+## Build/Run
+1. Import PuerkitoBio/goquery package.
+```bash
+go get "github.com/PuerkitoBio/goquery"
+```
+2. Build the program (Run build.bat for Windows. If not, refer to steps within the same).
 2. Run the program (Run run.bat for Windows. If not, refer to steps within the same).
 
 
-Sample Output:
+## Sample Output
+```bash
 >build.bat
 
 >run.bat
@@ -47,3 +53,5 @@ Korvpanna med rostad potatis och paprikacrème
 
 Press ENTER to exit...
 >
+
+```
